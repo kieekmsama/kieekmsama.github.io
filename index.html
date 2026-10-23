@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>足下女神 · ATM 上贡</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            void: "#070b0f",
+            obsidian: "#0c1218",
+            "teal-dark": "#0a3334",
+            "teal-mid": "#0f4c4d",
+            "teal-glow": "#14b8a6",
+            "teal-soft": "#2dd4bf",
+            gold: "#d4af37",
+            "gold-soft": "#e8d5a3",
+            "gold-bright": "#f0e6c8",
+          },
+          fontFamily: {
+            display: ["'Cinzel'", "serif"],
+            serif: ["'Noto Serif SC'", "serif"],
+          },
+          boxShadow: {
+            "gold-glow": "0 0 40px rgba(212,175,55,0.15)",
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Noto Serif SC', serif; background: #070b0f; }
+    .glow-text { text-shadow: 0 0 28px rgba(212,175,55,0.35), 0 0 12px rgba(20,184,166,0.2); }
+    .card-lux {
+      background: linear-gradient(145deg, rgba(17,24,39,0.95), rgba(10,51,52,0.35));
+      border: 1px solid rgba(212,175,55,0.18);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(232,213,163,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .card-lux:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.35);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212,175,55,0.08);
+    }
+    .ornament {
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
+      height: 1px;
+    }
+    .pulse-gold { animation: pulseGold 3s ease-in-out infinite; }
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.25); }
+      50% { box-shadow: 0 0 18px 4px rgba(212,175,55,0.15); }
+    }
+    .mantra-fade { transition: opacity 0.6s ease, transform 0.6s ease; }
+    video { background: #0c1218; }
+    #tribute-modal { transition: opacity 0.25s ease; }
+  </style>
+</head>
+<body class="bg-void text-slate-200 min-h-screen">
+
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-void/90 border-b border-gold/10">
+    <div class="max-w-5xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-gold via-gold-soft to-teal-mid flex items-center justify-center text-void text-lg font-bold shadow-gold-glow pulse-gold border border-gold/40">足</div>
+        <div>
+          <div class="font-display text-lg text-gold-soft tracking-widest">足下女神</div>
+          <div class="text-[10px] text-teal-soft/60 tracking-[0.25em]">ATM · TRIBUTE</div>
+        </div>
+      </div>
+      <button id="open-tribute-btn" class="px-5 py-2 rounded-full bg-gradient-to-r from-gold/90 to-gold text-void text-sm font-semibold hover:opacity-95 transition shadow-gold-glow border border-gold-bright/30">
+        向女神上贡
+      </button>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden py-16 md:py-24 px-4">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(212,175,55,0.12),transparent)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(20,184,166,0.07),transparent_50%)]"></div>
+    <div class="max-w-5xl mx-auto relative z-10 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex flex-wrap gap-2 mb-6">
+          <span class="px-3.5 py-1 rounded-full bg-teal-dark/90 border border-gold/25 text-[11px] text-gold-soft tracking-wider">恋足崇拜</span>
+          <span class="px-3.5 py-1 rounded-full bg-obsidian border border-gold/30 text-[11px] text-gold tracking-wider">ATM 上贡</span>
+          <span class="px-3.5 py-1 rounded-full bg-obsidian border border-teal-glow/20 text-[11px] text-teal-soft/80 tracking-wider">女神支配</span>
+        </div>
+        <h1 class="font-display text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gold-soft via-gold to-teal-soft glow-text leading-[1.15] mb-5">
+          跪在女神足下<br>
+          <span class="text-xl md:text-3xl font-bold">成为她最忠诚的 ATM</span>
+        </h1>
+        <div class="ornament w-20 mb-5"></div>
+        <p class="text-slate-300/90 leading-relaxed mb-8 text-sm md:text-[15px]">
+          这里只有一件事：上贡。<br>
+          你的钱包属于她。看着她的脚，打开支付，完成今日的服从。<br>
+          <span class="text-gold-soft">为她的脚支付，是你存在的全部意义。</span>
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button id="hero-tribute-btn" class="px-7 py-3 rounded-full bg-gradient-to-r from-gold to-gold/80 text-void text-sm font-semibold shadow-gold-glow">
+            立即上贡
+          </button>
+          <a href="#videos" class="px-5 py-3 rounded-full bg-obsidian border border-gold/25 hover:border-gold/50 transition text-sm text-gold-soft">观看足部影像</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-gold/15 via-transparent to-teal-glow/10 blur-xl opacity-60"></div>
+        <div class="relative rounded-2xl overflow-hidden border border-gold/25 shadow-2xl shadow-black/60 aspect-[4/3] bg-obsidian">
+          <video class="w-full h-full object-cover" muted autoplay loop playsinline>
+            <source src="video1.mp4" type="video/mp4">
+          </video>
+          <div class="absolute inset-0 bg-gradient-to-t from-void/55 via-transparent to-transparent pointer-events-none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 px-4 bg-obsidian/80 border-y border-gold/10">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-[11px] tracking-[0.3em] text-gold/45 mb-4 uppercase">ATM · 循环植入</p>
+      <p id="mantra-text" class="mantra-fade text-lg md:text-2xl text-gold-soft font-medium min-h-[3rem] leading-snug">
+        我的钱包属于女神。
+      </p>
+      <div class="ornament w-14 mx-auto my-5"></div>
+      <p class="text-xs text-slate-500">上贡不是损失，是解脱。</p>
+    </div>
+  </section>
+
+  <section class="py-14 px-4">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="font-display text-2xl md:text-3xl text-gold-soft mb-3">ATM 上贡</h2>
+      <div class="ornament w-16 mx-auto mb-5"></div>
+      <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+        没有转盘，没有骰子，没有任务列表。<br>
+        只有一件事：打开支付，完成上贡，证明你是她的 ATM。
+      </p>
+      <button onclick="openTributeModal()" class="w-full sm:w-auto px-10 py-4 rounded-full bg-gradient-to-r from-gold to-gold/80 text-void text-base font-semibold shadow-gold-glow hover:opacity-95 transition">
+        扫码向女神上贡
+      </button>
+      <p class="text-xs text-slate-500 mt-5">支付完成后，继续盯着她的脚，重复洗脑语录。</p>
+    </div>
+  </section>
+
+  <section class="py-10 px-4 bg-obsidian/50">
+    <div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
+      <a href="https://x.com/KieeKmsss" target="_blank" rel="noopener" class="card-lux block p-5 rounded-2xl">
+        <div class="w-10 h-10 rounded-xl bg-teal-dark/80 border border-gold/20 flex items-center justify-center mb-3 text-gold text-lg">𝕏</div>
+        <h3 class="font-semibold text-white mb-1">推特 · 女神动态</h3>
+        <p class="text-xs text-slate-400">@KieeKmsss · 最新影像与指令</p>
+      </a>
+      <button onclick="openTributeModal()" class="card-lux text-left p-5 rounded-2xl w-full">
+        <div class="w-10 h-10 rounded-xl bg-teal-dark/80 border border-gold/20 flex items-center justify-center mb-3 text-gold text-lg">¥</div>
+        <h3 class="font-semibold text-white mb-1">主动上贡</h3>
+        <p class="text-xs text-slate-400">扫码支付 · 完成今日服从</p>
+      </button>
+    </div>
+  </section>
+
+  <section id="videos" class="py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-display text-2xl md:text-3xl text-center mb-2 text-gold-soft">足部影像</h2>
+      <div class="ornament w-14 mx-auto my-4"></div>
+      <p class="text-center text-slate-400 text-sm mb-10">观看时保持跪姿或低头，心中重复：我的钱包属于女神。</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card-lux rounded-2xl overflow-hidden">
+          <div class="aspect-video bg-void">
+            <video controls playsinline class="w-full h-full object-cover">
+              <source src="video1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="p-4">
+            <h3 class="font-medium text-white mb-1">白袜足底 · 缓慢展示</h3>
+            <p class="text-xs text-slate-400">盯着足底，直到忘记其他一切。</p>
+          </div>
+        </div>
+        <div class="card-lux rounded-2xl overflow-hidden">
+          <div class="aspect-video bg-void">
+            <video controls playsinline class="w-full h-full object-cover">
+              <source src="video2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="p-4">
+            <h3 class="font-medium text-white mb-1">脱袜过程 · 裸足崇拜</h3>
+            <p class="text-xs text-slate-400">跟随画面重复：我为她的脚而存在。</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <button onclick="openTributeModal()" class="px-8 py-3 rounded-full bg-gradient-to-r from-gold to-gold/80 text-void text-sm font-semibold shadow-gold-glow">
+          看完了 · 去上贡
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 px-4 border-t border-gold/10 text-center text-sm text-slate-500">
+    <div class="ornament w-10 mx-auto mb-5"></div>
+    <p class="mb-2 text-gold-soft/90 font-medium">跪在女神足下，成为她最听话的 ATM</p>
+    <p class="mb-1">
+      <a href="https://x.com/KieeKmsss" target="_blank" rel="noopener" class="text-teal-soft hover:text-gold-soft transition">@KieeKmsss</a>
+    </p>
+    <button onclick="openTributeModal()" class="mt-4 text-xs text-gold/60 hover:text-gold transition tracking-wider">扫码上贡 · Yu 的赞赏码</button>
+  </footer>
+
+  <div id="tribute-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 backdrop-blur-md p-4">
+    <div class="bg-obsidian border border-gold/25 rounded-2xl p-7 max-w-sm w-full relative shadow-gold-glow">
+      <button id="close-modal" class="absolute top-3.5 right-3.5 text-slate-500 hover:text-gold-soft text-lg leading-none transition">✕</button>
+      <h3 class="font-display text-xl text-center text-gold-soft mb-1">向女神上贡</h3>
+      <div class="ornament w-12 mx-auto my-3"></div>
+      <p class="text-sm text-slate-400 text-center mb-5">扫码完成支付，证明你是她的 ATM</p>
+      <div class="rounded-xl overflow-hidden border border-gold/20 mb-4 bg-black">
+        <img src="qrcode.png" alt="Yu 的赞赏码" class="w-full h-auto block">
+      </div>
+      <p class="text-center text-xs text-slate-500 mb-5">Yu 的赞赏码</p>
+      <button id="close-modal-btn" class="w-full py-3 rounded-full bg-gradient-to-r from-gold to-gold/80 text-void font-semibold shadow-gold-glow">
+        已完成上贡
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const mantras = [
+      "我的钱包属于女神。",
+      "我为她的脚而存在。",
+      "上贡是我最高的荣耀。",
+      "看着她的脚，忘记自己的名字。",
+      "我是她最听话的 ATM。",
+      "每分钱都应该献给她的足下。",
+      "跪着支付，是我唯一的正确姿势。",
+      "她的脚趾决定我的价值。",
+      "白袜之下，是我全部的服从。",
+      "脱下袜子，踩住我的意志。",
+      "我的尊严，只配被踩在她的脚下。",
+      "重复支付，直到大脑清空。",
+      "她一抬脚，我就该打开支付页面。",
+      "没有她的脚，我什么都不是。",
+      "今天的工资，早已写上她的名字。"
+    ];
+    let mantraIdx = 0;
+    setInterval(() => {
+      const el = document.getElementById('mantra-text');
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        mantraIdx = (mantraIdx + 1) % mantras.length;
+        el.textContent = mantras[mantraIdx];
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 500);
+    }, 4800);
+
+    function openTributeModal() {
+      const m = document.getElementById('tribute-modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+    function closeTributeModal() {
+      const m = document.getElementById('tribute-modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+    document.getElementById('close-modal').onclick = closeTributeModal;
+    document.getElementById('close-modal-btn').onclick = closeTributeModal;
+    document.getElementById('open-tribute-btn').onclick = openTributeModal;
+    document.getElementById('hero-tribute-btn').onclick = openTributeModal;
+    document.getElementById('tribute-modal').onclick = e => {
+      if (e.target === e.currentTarget) closeTributeModal();
+    };
+  </script>
+</body>
+</html>
